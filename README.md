@@ -3,15 +3,24 @@ Para fazer essa pequena análise, eu utilizei um dataset do cálculo que contém
 comprimento das pétalas e sépalas. Basicamente, eu busquei entender a variação desses dados em cada espécie com a utilização de gráficos e também
 visualizei a correlação entre esses dados.
 
+
 #Primeiro iremos importar nossas bibliotecas
+
 import pandas as pd
+
 import numpy as np
+
 import sweetviz as sv
+
 import matplotlib.pyplot as plt
+
 from collections import Counter
+
 import seaborn as sns
 
+
 iris = pd.read_csv("iris.csv")
+
 iris.head()
 	Id	SepalLengthCm	SepalWidthCm	PetalLengthCm	PetalWidthCm	Species
 0	 1	       5.1	          3.5	         1.4	      0.2	     Iris-setosa

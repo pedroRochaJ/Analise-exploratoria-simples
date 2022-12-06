@@ -19,15 +19,23 @@ from collections import Counter
 import seaborn as sns
 
 
+
 iris = pd.read_csv("iris.csv")
 
 iris.head()
 	Id	SepalLengthCm	SepalWidthCm	PetalLengthCm	PetalWidthCm	Species
+
 0	 1	       5.1	          3.5	         1.4	      0.2	     Iris-setosa
+
 1	 2	       4.9	          3.0	         1.4	      0.2	     Iris-setosa
+
 2        3	       4.7	          3.2	         1.3	      0.2	     Iris-setosa
+
 3	 4	       4.6	          3.1	         1.5	      0.2	     Iris-setosa
+
 4	 5	       5.0	          3.6	         1.4	      0.2	     Iris-setosa
+
+
 
 #Descrição dos principais dados estatísticos do dataset
 iris.describe()
@@ -42,14 +50,23 @@ df.shape
 #Visualização dos tipos de dados e nome das colunas
 df.info()
 
+
 #Verificando a presença de valores nulos no dataset
+
 df.isnull()
+
 df.isnull().sum()
+
 Id               0
+
 SepalLengthCm    0
+
 SepalWidthCm     0
+
 PetalLengthCm    0
+
 PetalWidthCm     0
+
 Species          0
 #É bom saber que não há valores nulos 
 

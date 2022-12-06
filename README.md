@@ -16,7 +16,7 @@ iris.head()
 	Id	SepalLengthCm	SepalWidthCm	PetalLengthCm	PetalWidthCm	Species
 0	 1	       5.1	          3.5	         1.4	      0.2	     Iris-setosa
 1	 2	       4.9	          3.0	         1.4	      0.2	     Iris-setosa
-2  3	       4.7	          3.2	         1.3	      0.2	     Iris-setosa
+2        3	       4.7	          3.2	         1.3	      0.2	     Iris-setosa
 3	 4	       4.6	          3.1	         1.5	      0.2	     Iris-setosa
 4	 5	       5.0	          3.6	         1.4	      0.2	     Iris-setosa
 
@@ -79,6 +79,7 @@ plt.title("Comparação entre a mesma espécie do comprimento de pétala (iris-v
 plt.ylabel("Tamanho da pétala em (cm)")
 plt.xlabel("Iris-")
 plt.bar(range(len(flowers2)), petal2)
+
 ![image](https://user-images.githubusercontent.com/113612805/205778007-62909843-6db5-448e-b6fa-97926b34fe73.png)
 
 #Iremos criar um gráfico para visualizar a comparação entre as espécies. (Eu entendo que estatísticamente não há para que isso ser feito, no entanto, antes de tudo
@@ -93,13 +94,16 @@ nome_especies = Counter(df.Species).keys()
 plt.xticks(range(len(nome_especies)), nome_especies)
 plt.ylabel("Comprimento da pétala em cm")
 plt.bar(range(len(nome_especies)), lista_media)
+
 ![image](https://user-images.githubusercontent.com/113612805/205778247-2cf5d7b2-c981-48d7-845f-21d96b532b2d.png)
 
 import seaborn as sns
 _ = sns.boxplot(x="Species", y="PetalLengthCm", data=df)
 ![image](https://user-images.githubusercontent.com/113612805/205778319-3df35a8d-f18f-46f6-8e6e-408d6100f2d2.png)
+
 #Com base na visualização do gráfico podemos notar que a variância da iris-setosa é bem menor se comparado ao restante
 
+#Verificando a coorelação entre as variáveis
 df.corr()
 	        Id	SepalLengthCm	SepalWidthCm	PetalLengthCm	PetalWidthCm
           Id	1.000000	0.716676	-0.397729	0.882747	0.899759
@@ -107,6 +111,7 @@ SepalLengthCm	0.716676	1.000000	-0.109369	0.871754	0.817954
 SepalWidthCm	-0.397729	-0.109369	1.000000	-0.420516	-0.356544
 PetalLengthCm	0.882747	0.871754	-0.420516	1.000000	0.962757
 PetalWidthCm	0.899759	0.817954	-0.356544	0.962757	1.000000
+
 #Correlação entre as variáveis
 #Correlação menor que zero:Se a correlação é menor que zero, significa que é negativo, 
 #isto é, que as variáveis são inversamente relacionadas.
@@ -121,7 +126,9 @@ _ = sns.displot(lim_vary, kde=True) #displot faz a distribuição normal
 #_ = sns.boxplot(x="lim_varx", y="lim_vary", data=df)
 #Quanto maior o comprimento da sépala menor é a largura dela 
 #Quanto maior o comprimento da sépala maior é o comprimento da pétala
+
 ![image](https://user-images.githubusercontent.com/113612805/205778501-85f0c553-5d3b-4e2f-9637-f10b00d3b7a1.png)
+
 ![image](https://user-images.githubusercontent.com/113612805/205778517-d9c95e07-2bc7-4516-b4ba-d98d3f44530b.png)
 #Podemos afirmar que os dados são bem dispersos em torno da nossa medida central.
 
@@ -134,6 +141,7 @@ SepalWidthCm      AxesSubplot(0.44569,0.11;0.133621x0.77)
 PetalLengthCm    AxesSubplot(0.606034,0.11;0.133621x0.77)
 PetalWidthCm     AxesSubplot(0.766379,0.11;0.133621x0.77)
 dtype: object
+
 ![image](https://user-images.githubusercontent.com/113612805/205778865-a02319a8-6afc-4eac-8c41-14632692e274.png)
 
 
@@ -141,3 +149,5 @@ my_report = sv.analyze(iris)
 my_report.show_html()
 #Irá gerar uma página com as principais medidas estatísticas, nos possibilitando analisar os dados de uma forma mais rápida. Com essa biblioteca
 é possível também comparar dados e ver graficamente e de forma interativa.
+![image](https://user-images.githubusercontent.com/113612805/205780188-65ec7985-5517-4379-b2b6-56482c099516.png)
+
